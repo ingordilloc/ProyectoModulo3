@@ -1,0 +1,18 @@
+{
+    "name": "gordillocastro/proyectofinal",
+    "description": "Manejo de Alumnos y Matriculas con PHP",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Gordillocastro\\Enlacesv5\\": "src/"
+           
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "fpdf/fpdf": "dev-master",
+        "dompdf/dompdf": "dev-master",
+        "phpoffice/phpspreadsheet": "1.28"
+    }
+}
