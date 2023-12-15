@@ -3,32 +3,26 @@ namespace Controller;
 require 'vendor/autoload.php';
 use Dompdf\Dompdf;
 use Controller\MatriculasController;
-class PdfController{
-    public function generate() { 
+class ProfesorPDFController{
+    public function profesoresAulas() { 
         $usuarios = new MatriculasController;
-        $listUsuarios = $usuarios->mostrarMatriculas();
+        $listUsuarios = $usuarios->mostrarAulas();
         $dompdf = new Dompdf();
-        $headerTable = '<h1>Listado de Participantes</h1><br>
-        <center><p>Alumnos Matriculados</p></center><br>
+        $headerTable = '<h1>Listado de Profesores</h1><br>
+        <center><p>Profesores Asignados por Grado</p></center><br>
         <table style="border: 1px solid black; margin: 0 auto;">
         <tr>
-  <th class="col-1">No</th>
+  <th class="col-1">No de Aula</th>
   <th>Nombre</th>
   <th>Apellido</th>
   <th>Nivel</th>
   <th>Academico</th>
-  <th>No. Carnet</th>
-  <th>Direccion</th>
-  <th>Solvente</th>
 </tr>';
         $footerTable = '</table>';
         $bodyTable="";
         foreach( $listUsuarios as $usuario){
             $bodyTable = $bodyTable."<tr><th>".$usuario['Codigo']."</th>.<th>".$usuario['nombre']."</th>.<th>".$usuario['apellido']."</th>.
-            <th>".$usuario['descripcion']."</th>.<th>".$usuario['escolaridad']."</th>.<th>".$usuario['carnet']."</th>.<th>".$usuario['direccion']."</th> 
-            .<th>".$usuario['solvente']."</th></tr>
-            ";
-
+            <th>".$usuario['descripcion']."</th>.<th>".$usuario['escolaridad']."</th></tr>";
 
         }
         $completeTable = $headerTable.$bodyTable.$footerTable;

@@ -62,7 +62,7 @@ if (!empty($_SESSION['id']) && !empty($_SESSION['rol']== 'a') || !empty($_SESSIO
                             <option value="si">Si</option>
                             <option value="no">No</option>
                         </select>
-                        <label>Solvente</label>
+                        <label>Inscripcion</label>
                     </div>
                     <input type="hidden" name="idRegistro" value="<?php echo $registro['idAlumnos']; ?>">
                     <button class="btn btn-dark w-100 py-2" type="submit">Matricular</button>

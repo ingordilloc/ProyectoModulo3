@@ -29,11 +29,12 @@ if (!empty($_SESSION['id'])){        //Validacion obligatoria de sesion
     let data = [];
     contenido.forEach((element)=>etiquetas.push(element.curso));
     contenido.forEach((element)=>data.push(element.cantidad));
-// Podemos tener varios conjuntos de datos. Comencemos con uno
+
+    // Podemos tener varios conjuntos de datos. Comencemos con uno
 const datosVentas2020 = {
-    label: "Nota x Curso",
+    label: "Nota por Curso",
     data: data, // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
-    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo
+    backgroundColor: 'rgba(12, 87, 238, 0.2)', // Color de fondo
     borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
     borderWidth: 1,// Ancho del borde
 };
